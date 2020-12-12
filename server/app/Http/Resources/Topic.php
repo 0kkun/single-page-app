@@ -11,7 +11,7 @@ class Topic extends JsonResource
 {
     /**
      * Transform the resource into an array.
-     * Eloquentを元にして、どの項目がAPIとして返されるかを設定
+     * Topicモデルを元にして、どの項目がAPIとして返されるかを設定
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
