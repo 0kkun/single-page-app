@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Topic;
 use Illuminate\Http\Request;
+use App\Http\Resources\Topic AS TopicResource; //APIリソースを使用
 
+/**
+ * APIエンドポイントを設定する
+ */
 class TopicController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * // 一覧表示
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return TopicResource::collection(Topic::all());
     }
 
     /**
@@ -28,14 +32,18 @@ class TopicController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 保存
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $topic = new Topic;
+        $topic->title = $request->input('title','');
+        $topic->content = $request->input('content','');
+    
+        $topic->save();
     }
 
     /**
@@ -46,7 +54,7 @@ class TopicController extends Controller
      */
     public function show(Topic $topic)
     {
-        //
+        return new TopicResource($topic);
     }
 
     /**
@@ -61,7 +69,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * 更新
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Topic  $topic
@@ -69,17 +77,20 @@ class TopicController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
-        //
+        $topic->title = $request->input('title','');
+        $topic->content = $request->input('content','');
+    
+        $topic->save();
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 削除
      *
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
     public function destroy(Topic $topic)
     {
-        //
+        $topic->delete();
     }
 }
