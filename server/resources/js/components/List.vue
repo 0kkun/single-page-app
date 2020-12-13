@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div class="container">
         <div class="list-group">
         <router-link v-for="( item, key, index ) in items" :key="key" :to="{ name: 'detail', params: { id: item.id } }" class="list-group-item">
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    export default {
+export default {
     data: function() {
         return {
         items: null

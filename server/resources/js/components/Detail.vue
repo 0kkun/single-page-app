@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div>
         <div class="card" v-if="item">
             <div v-if="updated" class="alert alert-primary" role="alert">

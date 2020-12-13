@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div class="container">
         <div v-if="saved" class="alert alert-primary" role="alert">
         保存しました

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><router-link class="nav-link active" :to="{ name: 'list' }">一覧</router-link></li>
