@@ -53724,23 +53724,23 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
-    component: __webpack_require__(/*! ./components/list.vue */ "./resources/js/components/list.vue"),
+    component: __webpack_require__(/*! ./components/list.vue */ "./resources/js/components/list.vue")["default"],
     name: 'list'
   }, // ルートでアクセスしたら、List.vueを表示
   {
     path: '/create',
-    component: __webpack_require__(/*! ./components/Form.vue */ "./resources/js/components/Form.vue"),
+    component: __webpack_require__(/*! ./components/Form.vue */ "./resources/js/components/Form.vue")["default"],
     name: 'create'
   }, // createにアクセスしたらForm.vueを表示
   {
     path: '/:id',
-    component: __webpack_require__(/*! ./components/Detail.vue */ "./resources/js/components/Detail.vue"),
+    component: __webpack_require__(/*! ./components/Detail.vue */ "./resources/js/components/Detail.vue")["default"],
     name: 'detail'
   } // id番号でアクセスしたらDetail.vueを表示
   ]
 }); // Vueのコンポーネント。ページ上部にメニューバーを表示させたいので、Navbar.vueを登録
 
-Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")); // Vue.jsの実行
+Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]); // Vue.jsの実行
 
 var app = new Vue({
   router: router
